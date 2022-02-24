@@ -1,24 +1,87 @@
 <html>
+
 <head>
     <title>VTOP Login</title>
-     <script>
-         function validate(){
-             // var email = document.forms["form"]["username"].value;
-             alert("Reset link has been sent to your respective email id");
-         }
-     </script>
-</head>
-<body>
-<form>
-<center>
-    <br><br>
-    <br><br>
-    <table cellpadding="10" cellspacing="10">
-        <tr><td><input type="email" name="email" placeholder="Enter your VIT mail id" pattern=".+@vitstudent.ac.in"></td>
-            <td><input type="submit" value="Send link" onclick="validate()"></td></tr>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-    </table>
-</center>
- </form>
+        .input-icons i {
+            position: absolute;
+        }
+
+        .input-icons {
+            width: 100%;
+            margin-bottom: 8px;
+        }
+
+        .icon {
+            background: dodgerblue;
+            padding: 6px;
+            min-width: 30px;
+            height: border-box;
+        }
+
+        .btn {
+            background-color: dodgerblue;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.9;
+        }
+
+        .btn:hover {
+            opacity: 1;
+        }
+    </style>
+
+</head>
+
+<body>
+    <center>
+        <form action="#" name="form">
+            <table cellspacing="10" cellpadding="10">
+                <h3>VTOP Reset Password</h3>
+            </table>
+            <table>
+                <div class="input-icons">
+                    <tr>
+                        <input type="email" name="email" placeholder="Enter your VIT mail id"
+                                pattern=".+@vitstudent.ac.in" required>
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        <td><button type="button" value="Send link" class="btn" onclick="validateEmail()"> Send Link</button></td>
+                        <!-- <input type="submit" value="submit"> -->
+                    </tr>
+                </div>
+            </table>
+        </form>
+
+    </center>
+
+    <script>
+        function validateEmail() {
+            var emailId = document.forms["form"]["email"].value;
+
+            try {
+                if (emailId.includes("@vitstudent.ac.in")) {
+                    alert("Email sent to " + emailId)
+                }
+                else{
+                    alert("Please provide a valid email-id")
+                }
+
+            } catch (error) {
+                console.log(error);
+            }
+
+        }
+    </script>
+
 </body>
+
 </html>
