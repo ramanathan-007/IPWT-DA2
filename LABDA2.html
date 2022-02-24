@@ -1,10 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>VTOP LOGIN</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .input-icons i {
+            position: absolute;
+        }
+
+        .input-icons {
+            width: 100%;
+            margin-bottom: 8px;
+        }
+
+        .icon {
+            background: dodgerblue;
+            padding: 6px;
+            min-width: 30px;
+            height: border-box;
+        }
+
+        .btn {
+            background-color: dodgerblue;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.9;
+        }
+
+        .btn:hover {
+            opacity: 1;
+        }
+    </style>
 </head>
 
 <body>
 
 
     <center>
-        <form action="#" name="form" onsubmit="return validateFields">
+        <form action="#" name="form">
             <table cellspacing="10" cellpadding="10">
                 <h3 style="font-family:sans-serif; font-size:30px">VTOP Login</h3>
             </table>
@@ -44,7 +86,7 @@
         // does not match if digits are present
         const userNameRegex = /^([^0-9]*)$/;
         // Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character
-        const passwordRegex = /^(?=.?[A-Z])(?=.?[a-z])(?=.?[0-9])(?=.?[#?!@$%^&*-]).{8,}$/;
+        const passwordRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
 
         function validateFields() {
             var userName = document.forms["form"]["username"].value;
